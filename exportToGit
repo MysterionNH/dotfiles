@@ -6,6 +6,7 @@ declare -a directories=(
   ".config/bspwn"
   ".config/sxhkd"
   ".config/polybar"
+  ".background"
   "refind"
 )
 
@@ -28,11 +29,9 @@ cp ~/.config/sxhkd/* ./.config/sxhkd
 cp ~/.config/polybar/* ./.config/polybar
 
 # backgrounds
-mkdir .background
 cp ~/.background/background.png ./.background/
 
 # rEFInd
-mkdir refind
 cp /boot/efi/EFI/refind/custom* ./refind
 cp -r /boot/efi/EFI/refind/themes ./refind
 
@@ -61,3 +60,4 @@ git push
 
 # clean up files
 rm `find . ! -ipath '*.git*' ! -iname '*.md' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'`
+rm `find . -type d -empty`
