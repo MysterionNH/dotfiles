@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# copy all relevant files to current folder
+
+# scripts
+cp -r ~/.bin ./
+
+# configs
+mkdir config && cd config
+mkdir bspwm && cp ~/.config/bspwm/* ./bspwm
+mkdir sxhkd && cp ~/.config/sxhkd/* ./sxhkd
+mkdir polybar && cp ~/.config/polybar/* ./polybar
+cd ..
+
+# backgrounds
+cp -r ~/.background ./
+
+# rEFInd
+mkdir refind
+cp /boot/efi/EFI/refind/custom* ./refind
+cp -r /boot/efi/EFI/refind/themes ./refind
+
+# xinit
+cp ~/.xinitrc ./
+
+# X resources
+cp ~/.Xresources ./
+
+# zsh
+cp ~/.zprofile ./
+cp ~/.zshenv ./
+cp ~/.zshrc ./
+
+# create commit with given message, or a default
+git add .
+if [[ "$1" != "" ]]
+then
+    git commit -m "$@"
+else
+    git commit -m "Updated dotfiles"
+fi
+
+# clean up files
+

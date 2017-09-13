@@ -1,0 +1,30 @@
+#!/bin/sh
+
+killNative() {
+  for s in `ps aux | egrep ".local" | egrep "steam" | awk '{print $2}'`;
+    do kill $s && echo "Killed $s"
+  done
+}
+
+killWine() {
+  for p in `pgrep "Steam.exe"`
+    do kill $p && echo "Killed $p"
+  done
+}
+
+killBoth() {
+  for p in `pgrep "[Ss]{1}team"`
+    do kill $p && echo "Killed $p"
+  done
+}
+
+main() {
+  case "$1" in
+    --native|-n) killNative; return 0;;
+    --wine|-w)   killWine; return 0;;
+    --both|-b)   killBoth; return 0;;
+    *)           killBoth; return 0;;
+  esac
+}
+
+main "$@"

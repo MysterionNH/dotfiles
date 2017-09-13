@@ -1,0 +1,3 @@
+#!/bin/sh
+
+for exe in `pgrep .exe`; do kill $exe; done

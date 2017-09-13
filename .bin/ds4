@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+sudo systemctl start bluetooth.service && \
+sudo hciconfig hci0 up && \
+ds4drv --battery-flash --led 001500 --trackpad-mouse

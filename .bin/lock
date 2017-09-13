@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+cfg_tmpdir="/run/user/$UID/i3lock"
+overlay_image="/home/niklas/.lock/lock.png"
+
+main() {
+	# do not run more then once
+	if pgrep -x i3lock > /dev/null;
+	then
+		return 1;
+	fi
+
+	umask 0077 # All files and dirs created should only be accessible by the user.
+
+	if ! [[ -d "$cfg_tmpdir" ]]; then
+		mkdir -p "$cfg_tmpdir" || {
+			return 1
+		}
+	fi
+
+	# screenshot
+	scrot "$cfg_tmpdir/lockbg.png"
+	image_file="${cfg_tmpdir}/lockbg.png"
+
+	# pixelize
+	convert "$image_file" -scale 192x108 -scale 1920x1080 "$cfg_tmpdir/lockbg.png"
+	
+	# overlay lock image
+	convert -gravity center -composite -matte "$image_file" "$overlay_image" "$cfg_tmpdir/lockbg.png"
+
+	until /usr/bin/i3lock -f -e -n -t -i "$image_file"; do
+		true
+	done
+}
+
+main "$@"

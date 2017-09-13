@@ -1,0 +1,20 @@
+# export dmenu args
+
+# get screen dimensions
+screen_width=$(xrandr -q | grep Screen | awk '{print $8}')
+screen_height=$(xrandr -q | grep Screen | awk '{print $10}' | sed s/,//)
+
+# set dmenu dimensions with a border of 10 on each site, a little above the middle in height
+dmenu_width=$(($screen_width - 20))
+x=10
+y=$(($(($screen_height / 2)) - 250))
+
+# colors and font TODO: find a way to always match terminal colors
+foreground_select="#000"
+background_select="#8C9440"
+foreground="#ebdbb2"
+background="#282828"
+export dmenu_font="-*-terminus-*-*-*-*-*-*-*-*-*-*-*-*"
+
+export dmenu_args="-i -w $dmenu_width -x $x -y $y -fn ${dmenu_font} -nb $background -nf $foreground -sb $background_select -sf $foreground_select"
+
