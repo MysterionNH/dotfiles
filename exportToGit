@@ -7,9 +7,11 @@ cp -r ~/.bin ./
 
 # configs
 mkdir .config
-mkdir bspwm && cp ~/.config/bspwm/* ./.config/bspwm
-mkdir sxhkd && cp ~/.config/sxhkd/* ./.config/sxhkd
-mkdir polybar && cp ~/.config/polybar/* ./.config/polybar
+cd .config
+mkdir bspwm && cp ~/.config/bspwm/* ./bspwm
+mkdir sxhkd && cp ~/.config/sxhkd/* ./sxhkd
+mkdir polybar && cp ~/.config/polybar/* ./polybar
+cd ..
 
 # backgrounds
 mkdir .background
@@ -44,6 +46,5 @@ fi
 git push
 
 # clean up files
-#rm -rdf
-find . ! -ipath '*.git*' ! -iname '*.md' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'
+rm -d `find . ! -ipath '*.git*' ! -iname '*.md' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'`
 
