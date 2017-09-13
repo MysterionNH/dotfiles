@@ -1,17 +1,31 @@
 #!/bin/bash
 
+# create necessary directories, if not yet existend
+declare -a directories=(
+  ".config"
+  ".config/bspwn"
+  ".config/sxhkd"
+  ".config/polybar"
+  "refind"
+)
+
+for dir in "${directories[@]}"
+do
+  if [[ ! -d "$dir" ]]
+  then
+    mkdir -p "$dir"
+  fi
+done    
+
 # copy all relevant files to current folder
 
 # scripts
 cp -r ~/.bin ./
 
 # configs
-mkdir .config
-cd .config
-mkdir bspwm && cp ~/.config/bspwm/* ./bspwm
-mkdir sxhkd && cp ~/.config/sxhkd/* ./sxhkd
-mkdir polybar && cp ~/.config/polybar/* ./polybar
-cd ..
+cp ~/.config/bspwm/* ./.config/bspwm
+cp ~/.config/sxhkd/* ./.config/sxhkd
+cp ~/.config/polybar/* ./.config/polybar
 
 # backgrounds
 mkdir .background
