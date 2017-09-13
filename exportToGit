@@ -13,7 +13,8 @@ mkdir polybar && cp ~/.config/polybar/* ./polybar
 cd ..
 
 # backgrounds
-cp -r ~/.background ./
+mkdir .background
+cp ~/.background/background.png ./.background/
 
 # rEFInd
 mkdir refind
