@@ -47,4 +47,3 @@ git push
 
 # clean up files
 rm `find . ! -ipath '*.git*' ! -iname '*.md' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'`
-rm -d ./*
