@@ -60,4 +60,4 @@ git push
 
 # clean up files
 rm `find . -type f ! -ipath '*.git*' ! -iname '*.md' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'`
-rm `find . -type d -empty`
+rmdir `find . -type d -empty`
