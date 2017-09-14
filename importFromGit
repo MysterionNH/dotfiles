@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# pull and make sure working tree is clean
+git pull
+git reset --hard origin/master
+
+# copy files to location (interactive)
+
+# scripts
+cp -i .bin/* ~/.bin/
+
+# configs
+cp -i .config/bspwm/* ~/.config/bspwm
+cp -i .config/sxhkd/* ~/.config/sxhkd
+cp -i .config/polybar/* ~/.config/polybar
+
+# backgrounds
+cp -i .background/background.png ~/.background/
+
+# rEFInd (will fail, because efi disk is mounted ro)
+cp -ri refind/* /boot/efi/EFI/refind/
+
+# xinit
+cp -i .xinitrc ~/
+
+# X resources
+cp -i .Xresources ~/
+
+# zsh
+cp -i .zprofile ~/
+cp -i .zshenv ~/
+cp -i .zshrc ~/
+
+# clean up files
+rm `find . -type f ! -ipath '*.git*' ! -iname '*.md' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'`
+rmdir `find . -type d -empty`
