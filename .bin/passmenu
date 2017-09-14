@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 /usr/bin/passmenu $(echo ${dmenu_args}) -p "user:"
+ 
