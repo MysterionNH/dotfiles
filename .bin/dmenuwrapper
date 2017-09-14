@@ -1,4 +1,4 @@
 #!/bin/sh
 
-dmenu_run $(echo ${dmenu_args}) -p "run:" -dim 0.75
+dmenu_run $(echo ${dmenu_args}) -p "run:"
 
