@@ -3,7 +3,7 @@
 cd /etc/netctl
 
 for name in `ls wlp3s0-*`; do
-  if [[ `sudo netctl status "$name" | grep -c "Active: active"` -ne 0 ]]; then 
+  if [[ `sudo netctl is-active "$name" == "active" ]]; then 
     sudo netctl restart "$name"
     exit 0
   fi

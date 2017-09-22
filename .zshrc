@@ -57,6 +57,11 @@ function transparent() {
     fi
 }
 
+# edit bspwm window gap
+function gap() {
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` $1))
+}
+
 # ls
 export COLUMNS  # Remember columns for subprocesses.
 eval "$(dircolors)"
