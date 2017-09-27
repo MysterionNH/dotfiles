@@ -1,0 +1,3 @@
+sudo ip link set up dev enp2s0
+sudo ip addr add 139.96.30.100/24 dev enp2s0
+sudo dhcpd

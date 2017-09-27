@@ -36,7 +36,7 @@ feh --bg-fill "$HOME/.background/background.png" &
 $HOME/.bin/start-polybar &
 
 # start xautolocker
-xautolock -time 15 -locker lock -nowlocker lock -killtime 10 -killer "systemctl suspend" -detectsleep &
+xautolock -time 15 -locker /home/niklas/.bin/lock -nowlocker /home/niklas/.bin/lock -killtime 10 -killer "systemctl suspend" -detectsleep &
 
 # start the de itself
 exec bspwm
