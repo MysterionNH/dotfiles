@@ -9,6 +9,7 @@ declare -a directories=(
   ".config/dunst/"
   ".background"
   "refind"
+  "services"
 )
 
 for dir in "${directories[@]}"
@@ -36,6 +37,10 @@ cp ~/.background/background.png ./.background/
 # rEFInd
 cp /boot/efi/EFI/refind/custom* ./refind
 cp -r /boot/efi/EFI/refind/themes ./refind
+
+# systemd services
+cp /etc/systemd/system/clock_mod-fix.service ./services
+cp /etc/systemd/system/i3lock-extra.service ./services
 
 # xinit
 cp ~/.xinitrc ./
