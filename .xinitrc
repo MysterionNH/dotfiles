@@ -30,13 +30,20 @@ unclutter &
 # enable compositor
 compton -b &
 
+# enable sync between urxvt and x clipboard
+autocutsel -fork &
+
 # set backbround
 feh --bg-fill "$HOME/.background/background.png" &
 
+# start bars
 $HOME/.bin/start-polybar &
 
+# start dunst
+dunst &
+
 # start xautolocker
-xautolock -time 15 -locker /home/niklas/.bin/lock -nowlocker /home/niklas/.bin/lock -killtime 10 -killer "systemctl suspend" -detectsleep &
+xautolock -time 15 -locker /home/niklas/bin/lock -nowlocker /home/niklas/bin/lock -killtime 10 -killer "systemctl suspend" -detectsleep &
 
 # start the de itself
 exec bspwm

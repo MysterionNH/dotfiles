@@ -15,7 +15,7 @@ super + e
 
 # program launcher
 super + @space
-	/home/niklas/.bin/dmenuwrapper
+	/home/niklas/bin/dmenuwrapper
 
 # make sxhkd reload its configuration files:
 super + Escape

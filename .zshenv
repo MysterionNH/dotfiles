@@ -6,9 +6,9 @@ export EDITOR=nano
 export BROWSER=chromium
 
 # add scripts to path
-if [[ $UID -ge 1000 && -d $HOME/.bin && -z $(echo $PATH | grep -o $HOME/.bin) ]]
+if [[ $UID -ge 1000 && -d $HOME/bin && -z $(echo $PATH | grep -o $HOME/bin) ]]
 then
-    export PATH="${HOME}/.bin:${PATH}"
+    export PATH="${HOME}/bin:${PATH}"
 fi
 
 # if there is a display and dmenu_args is not set, set it
