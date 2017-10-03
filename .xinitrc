@@ -37,7 +37,7 @@ autocutsel -fork &
 feh --bg-fill "$HOME/.background/background.png" &
 
 # start bars
-$HOME/.bin/start-polybar &
+$HOME/bin/start-polybar &
 
 # start dunst
 dunst &
