@@ -1,6 +1,5 @@
-#i3 lock on sleep
 [Unit]
-Description=i3lock-extra
+Description=Executes custom i3lock on suspend
 Before=suspend.target
 
 [Service]
