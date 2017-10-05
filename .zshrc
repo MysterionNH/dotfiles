@@ -69,7 +69,7 @@ function ls {
 	command ls -F -h --color=always -v --author --time-style=long-iso -C "$@" | less -R -X -F
 }
 alias ll='ls -l'
-alias l='ls -l -a'
+alias l='ls -l -A'
 
 # basic utils
 alias rm='rm -iv'
