@@ -58,7 +58,7 @@ font-3 = NotoSans-Regular:size=12;-1
 font-4 = MaterialDesignIcons:size=14;4
 font-5 = Siji:pixelsize=10;0
 
-modules-left =
+modules-left = spotify
 modules-right = cpu temperature memory
 
 [module/backlight]
@@ -282,3 +282,13 @@ format-warn = <label-warn>
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = #e51f1f
+
+[module/spotify]
+type = custom/script
+
+exec = /home/niklas/.config/polybar/spotify.sh
+exec-if = pgrep -x spotify
+interval = 1
+
+format = <label>
+label = %output%

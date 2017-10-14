@@ -2,7 +2,7 @@ export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.config
 export LANG=en_US.UTF-8
 
-export EDITOR=nano
+export EDITOR=nvim
 export BROWSER=chromium
 
 # add scripts to path

@@ -34,7 +34,7 @@ compton -b &
 autocutsel -fork &
 
 # set backbround
-feh --bg-fill "$HOME/.background/background.png" &
+feh --bg-fill "$HOME/.background/background" &
 
 # start bars
 $HOME/bin/start-polybar &
