@@ -6,7 +6,7 @@ title=$(playerctl metadata xesam:title)
 status=$(playerctl status)
 
 if [ 1 -eq $(playerctl metadata mpris:trackid | grep -c spotify:ad) ]; then
-	echo -n "Advertisment";
+	echo -n "*Advertisment*";
 elif [ "$status" != Paused ]; then
 	echo -n "\"$title\" - $artist";
 else

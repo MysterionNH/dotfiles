@@ -12,16 +12,15 @@ width = 100%
 height = 24
 wm-restack = bspwm
 
+linecolor = ${colors.background}
 background = ${colors.background}
 foreground = ${colors.foreground}
-linecolor = ${colors.background}
 
-spacing = 0
-lineheight = 16
-padding-right = 3
+padding-left = 1
+padding-right = 1
+
 module-margin-left = 1
 module-margin-right = 1
-margin-bottom = -10
 
 font-0 = SourceCodePro:size=12;1
 font-3 = MaterialDesignIcons:size=14;0
@@ -30,69 +29,56 @@ font-4 = Termsyn:size=8;-1
 font-2 = Siji:pixelsize=10;0
 
 modules-left = powermenu wireless-network wired-network
-modules-center = bspwm-tmp
-modules-right = volume backlight battery0 date
+modules-center = bspwm
+modules-right = volume backlight battery date
 
 [bar/bottom]
 monitor = eDP-1
-bottom = true
 width = 100%
 height = 24
+bottom = true
 wm-restack = bspwm
+
+linecolor = ${colors.background}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = SourceCodePro:size=12;1
+font-1 = FontAwesome:size=12;1
+font-2 = Siji:pixelsize=12;1
+font-3 = MaterialDesignIcons:size=12;1
+font-4 = Termsyn:size=12;1
 
 tray-background = ${bar/bottom.background}
 tray-position = right
 tray-padding = 2
 
-background = ${bar/top.background}
-foreground = ${bar/top.foreground}
-linecolor = ${bar/top.background}
-
-spacing = 2
-lineheight = 0
-padding-left = 1
-padding-right = 1
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = SourceCodePro:size=12;2
-font-1 = Unifont:size=10;1
-font-2 = FontAwesome:size=12;3
-font-3 = NotoSans-Regular:size=12;-1
-font-4 = MaterialDesignIcons:size=14;4
-font-5 = Siji:pixelsize=10;0
-
 modules-left = spotify
-modules-right = cpu temperature memory
+modules-right = temperature cpu memory
 
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
-format = <ramp> <bar>
 
-ramp-0 = 
+format = <ramp> <label>
 
-bar-width = 10
-bar-foreground-0 = #aaff77
-bar-foreground-1 = #aaff77
-bar-foreground-2 = #aaff77
-bar-foreground-3 = #aaff77
-bar-foreground-4 = #aaff77
-bar-foreground-5 = #aaff77
-bar-foreground-6 = #aaff77
-bar-gradient = false
-bar-indicator = |
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = #fffffff
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
 
-[module/battery0]
+[module/battery]
 type = internal/battery
 full-at = 92
-battery= BAT0
+battery = BAT0
+adapter = ADP1
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
@@ -122,7 +108,7 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-[module/bspwm-tmp]
+[module/bspwm]
 type = internal/bspwm
 format = <label-state>
 
@@ -135,34 +121,10 @@ label-empty-padding = 1
 
 [module/cpu]
 type = internal/cpu
-interval = 0.5
-format = <label> <ramp-coreload>
-label = CPU
-
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = #aaff77
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = #aaff77
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = #aaff77
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = #aaff77
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
-ramp-coreload-4-foreground = #fba922
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
-ramp-coreload-5-foreground = #fba922
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff5555
+interval = 2
+format = <label>
+format-prefix = "  "
+label = %percentage%%
 
 [module/date]
 type = internal/date
@@ -175,22 +137,10 @@ label = %date% %time%
 
 [module/memory]
 type = internal/memory
-format = <label> <bar-used>
-label = RAM
-
-bar-used-width = 30
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 6
-bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #444444
+interval = 2
+format-prefix = "  "
+format = <label>
+label = %percentage_used%%
 
 [module/wireless-network]
 type = internal/network
@@ -198,21 +148,16 @@ interface = wlp3s0
 interval = 3.0
 ping-interval = 10
 
-format-connected = <ramp-signal><label-connected>
+format-connected = <ramp-signal> <label-connected>
 label-connected = %essid% ↓ %downspeed%
 label-disconnected = 
-label-disconnected-foreground = #ff0000
+label-disconnected-foreground = #ff1111
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-0-foreground = #ff0000
-ramp-signal-1-foreground = #ffd500
-ramp-signal-2-foreground = #ffff00
-ramp-signal-3-foreground = #d5ff00
-ramp-signal-4-foreground = #00ff00
 
 [module/wired-network]
 type = internal/network
@@ -225,38 +170,23 @@ label-disconnected-foreground = #ff0000
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = #ffffff
+format-volume = <ramp-volume> <label-volume>
 
-format-muted-prefix = " "
-format-muted-foreground = #ff6262
-label-muted = MUTE
+format-muted-foreground = #ff1111
+label-muted = 
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #aaff77
-bar-volume-foreground-1 = #aaff77
-bar-volume-foreground-2 = #aaff77
-bar-volume-foreground-3 = #aaff77
-bar-volume-foreground-4 = #aaff77
-bar-volume-foreground-5 = #aaff77
-bar-volume-foreground-6 = #aaff77
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = #fffffff
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
 
 [module/powermenu]
 type = custom/menu
 
-format-padding = 2
-
 label-open = 
-label-close = Cancel
+label-close = "Cancel  "
 
 menu-0-0 = "Terminate WM  "
 menu-0-0-foreground = #fba922
