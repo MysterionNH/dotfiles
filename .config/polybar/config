@@ -28,7 +28,7 @@ font-1 = FontAwesome:size=12;1
 font-4 = Termsyn:size=8;-1
 font-2 = Siji:pixelsize=10;0
 
-modules-left = powermenu wireless-network wired-network
+modules-left = powermenu wireless-network wired-network vpncheck
 modules-center = bspwm
 modules-right = volume backlight battery date
 
@@ -60,7 +60,7 @@ tray-position = right
 tray-padding = 2
 
 modules-left = spotify
-modules-right = temperature cpu memory
+modules-right = weather temperature cpu memory filesystem
 
 [module/backlight]
 type = internal/backlight
@@ -133,7 +133,7 @@ time = %H:%M
 time-alt= %H:%M:%S
 date = %d.%m.%Y
 date-alt = %A, %d %B %Y
-label = %date% %time%
+label = " %date% %time%"
 
 [module/memory]
 type = internal/memory
@@ -171,9 +171,7 @@ label-disconnected-foreground = #ff0000
 type = internal/volume
 
 format-volume = <ramp-volume> <label-volume>
-
-format-muted-foreground = #ff1111
-label-muted = 
+label-muted =  %percentage%%
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -213,9 +211,9 @@ warn-temperature = 60
 format = <label>
 format-warn = <label-warn>
 
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = #e51f1f
+label =  %temperature%
+label-warn =  %temperature%
+label-warn-foreground = #ff1111
 
 [module/spotify]
 type = custom/script
@@ -226,3 +224,26 @@ interval = 1
 
 format = <label>
 label = %output%
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = vpn
+format-prefix = " "
+format-prefix-foreground = #5b
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+exec = ~/.config/polybar/weather.py
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+
+label-mounted = %mountpoint%: %percentage_used%%
