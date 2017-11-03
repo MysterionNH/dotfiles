@@ -32,7 +32,7 @@ cp ~/.config/polybar/* ./.config/polybar
 cp ~/.config/dunst/* ./.config/dunst
 
 # backgrounds
-cp ~/.background/background.png ./.background/
+cp ~/.background/$(readlink ~/.background/background) ./.background/
 
 # rEFInd
 cp /boot/efi/EFI/refind/custom* ./refind
