@@ -12,22 +12,21 @@ width = 100%
 height = 24
 wm-restack = bspwm
 
+linecolor = ${colors.background}
 background = ${colors.background}
 foreground = ${colors.foreground}
-linecolor = ${colors.background}
 
-spacing = 0
-lineheight = 16
-padding-right = 3
+padding-left = 1
+padding-right = 1
+
 module-margin-left = 1
 module-margin-right = 1
-margin-bottom = -10
 
 font-0 = SourceCodePro:size=12;1
-font-3 = MaterialDesignIcons:size=14;0
 font-1 = FontAwesome:size=12;1
-font-4 = Termsyn:size=8;-1
 font-2 = Siji:pixelsize=10;0
+font-3 = MaterialDesignIcons:size=14;0
+font-4 = Termsyn:size=8;-1
 
 modules-left = powermenu wireless-network wired-network
 modules-center = bspwm-tmp
@@ -35,32 +34,30 @@ modules-right = volume backlight battery0 date
 
 [bar/bottom]
 monitor = eDP-1
-bottom = true
 width = 100%
 height = 24
+bottom = true
 wm-restack = bspwm
+
+linecolor = ${colors.background}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = SourceCodePro:size=12;1
+font-1 = FontAwesome:size=12;1
+font-2 = Siji:pixelsize=10;0
+font-3 = MaterialDesignIcons:size=14;0
+font-4 = Termsyn:size=8;-1
 
 tray-background = ${bar/bottom.background}
 tray-position = right
 tray-padding = 2
-
-background = ${bar/top.background}
-foreground = ${bar/top.foreground}
-linecolor = ${bar/top.background}
-
-spacing = 2
-lineheight = 0
-padding-left = 1
-padding-right = 1
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = SourceCodePro:size=12;2
-font-1 = Unifont:size=10;1
-font-2 = FontAwesome:size=12;3
-font-3 = NotoSans-Regular:size=12;-1
-font-4 = MaterialDesignIcons:size=14;4
-font-5 = Siji:pixelsize=10;0
 
 modules-left = spotify
 modules-right = cpu temperature memory

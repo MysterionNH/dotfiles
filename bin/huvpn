@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo "Starting hu vpn connection script"
+echo ""
+
+echo "Testing whether we are already connected.."
+
+if [ $(curl -s https://amor.cms.hu-berlin.de/account/ip.cgi | grep -ocP " red") == 0 ]; then
+  echo "Already connected, closing down";
+  exit -1;
+else
+  echo "Not yet connected"
+fi
+
+echo ""
+echo "Killing potentially open openvpn connections"
+echo ""
+
+# kill potentially existing openvpn connections
+sudo pkill openvpn
+
+echo ""
+
+echo "IP before connecting: $(curl -s https://amor.cms.hu-berlin.de/account/ip.cgi | grep -oP '(?<=<b>)[\.0-9]*(?=</b>)')"
+
+echo ""
+
+echo "Initiating connection.."
+echo ""
+sudo openvpn --config ~/media/university/hu-berlin.ovpn
+echo ""
+
+# give a moment time
+sleep 7
+
+if [ $(curl -s https://amor.cms.hu-berlin.de/account/ip.cgi | grep -ocP " green") == 0 ]; then
+  echo "Something went wrong";
+  exit -1;
+fi
+
+# all done
+echo "Connected! New IP: $(curl -s https://amor.cms.hu-berlin.de/account/ip.cgi | grep -oP '(?<=<b>)[\.0-9]*(?=</b>)')"
+echo ""

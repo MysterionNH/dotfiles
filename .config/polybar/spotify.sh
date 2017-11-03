@@ -1,12 +1,14 @@
 #!/bin/bash
 
-artist=$(playerctl metadata | grep -oP "(?<='xesam:artist': <\[')[.'a-zA-Z()\-+\s]*(?='\]>, 'xesam:autoR)")
-title=$(playerctl metadata | grep -oP "(?<='xesam:title': <)[.'a-zA-Z()\-+\s]*(?=>, 'xesam:trackN)")
-album=$(playerctl metadata | grep -oP "(?<='xesam:album': <)[.'a-zA-Z()\-+\s]*(?=>, 'xesam:albumA)")
+artist=$(playerctl metadata xesam:artist)
+title=$(playerctl metadata xesam:title)
+#album=$(playerctl metadata xesam:album)
 status=$(playerctl status)
 
-if [ "$status" != Paused ]; then
-  echo -n "Spotify - now playing: $artist | $title ($album)";
+if [ 1 -eq $(playerctl metadata mpris:trackid | grep -c spotify:ad) ]; then
+	echo -n "Advertisment";
+elif [ "$status" != Paused ]; then
+	echo -n "\"$title\" - $artist";
 else
-  echo -n "Spotify - now playing: $artist | $title ($album)" [PAUSED]
+	echo -n "\"$title\" - $artist [PAUSED]";
 fi
