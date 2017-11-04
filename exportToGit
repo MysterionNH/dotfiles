@@ -10,6 +10,7 @@ declare -a directories=(
   ".background"
   "refind"
   "services"
+  "modprobe.d"
 )
 
 for dir in "${directories[@]}"
@@ -47,6 +48,9 @@ cp -r /boot/efi/EFI/refind/themes refind
 # systemd services
 cp /etc/systemd/system/clock_mod-fix.service ./services
 cp /etc/systemd/system/i3lock-extra.service ./services
+
+# kernel mod options
+cp /etc/modprobe.d/* ./modprobe.d
 
 # xinit
 cp ~/.xinitrc ./
