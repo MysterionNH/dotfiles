@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Updating package lists: 1/3 (dependencies)"
+echo ""
+
+pacman -Qd > ~/.dependenciesPkgs && date >> ~/.dependenciesPkgs
+
+echo "Updating package lists: 2/3 (explicit)"
+echo ""
+
+pacman -Qe > ~/.explicitPkgs && date >> ~/.dependenciesPkgs
+
+echo "Updating package lists: 3/3 (foreign)"
+echo ""
+
+pacman -Qm > ~/.foreignPkgs && date >> ~/.dependenciesPkgs
+
+echo "Done."
+echo ""

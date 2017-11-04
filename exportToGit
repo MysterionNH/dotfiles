@@ -25,6 +25,11 @@ done
 # scripts
 cp -r ~/bin ./
 
+# package lists
+cp ~/.dependenciesPks .
+cp ~/.explicitPkgs .
+cp ~/.foreignPkgs .
+
 # configs
 cp ~/.config/bspwm/* .config/bspwm/
 cp ~/.config/sxhkd/* .config/sxhkd/
