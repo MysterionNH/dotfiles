@@ -3,7 +3,7 @@
 # create necessary directories, if not yet existend
 declare -a directories=(
   ".config"
-  ".config/bspwn"
+  ".config/bspwm"
   ".config/sxhkd"
   ".config/polybar"
   ".config/dunst/"
@@ -26,13 +26,13 @@ done
 cp -r ~/bin ./
 
 # configs
-cp ~/.config/bspwm/* ./.config/bspwm/
-cp ~/.config/sxhkd/* ./.config/sxhkd/
-cp ~/.config/dunst/* ./.config/dunst/
-cp ~/.config/polybar/config ./.config/polybar/config
+cp ~/.config/bspwm/* .config/bspwm/
+cp ~/.config/sxhkd/* .config/sxhkd/
+cp ~/.config/dunst/* .config/dunst/
+cp ~/.config/polybar/config .config/polybar/config
 
 # backgrounds
-cp ~/.background/$(readlink ~/.background/background) ./.background/
+cp ~/.background/$(readlink ~/.background/background) .background/
 
 # rEFInd
 cp /boot/efi/EFI/refind/custom* ./refind
