@@ -67,5 +67,5 @@ fi
 git push
 
 # clean up files
-rm `find . -type f ! -ipath '*.git*' ! -iname '*.md' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'`
+rm `find . -type f ! -ipath '*.git*' ! -name 'exportToGit' ! -name 'importFromGit' ! -name '.'`
 rmdir `find . -type d -empty`
