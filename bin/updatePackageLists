@@ -8,12 +8,12 @@ pacman -Qd > ~/.dependenciesPkgs && date >> ~/.dependenciesPkgs
 echo "Updating package lists: 2/3 (explicit)"
 echo ""
 
-pacman -Qe > ~/.explicitPkgs && date >> ~/.dependenciesPkgs
+pacman -Qe > ~/.explicitPkgs && date >> ~/.explicitPkgs
 
 echo "Updating package lists: 3/3 (foreign)"
 echo ""
 
-pacman -Qm > ~/.foreignPkgs && date >> ~/.dependenciesPkgs
+pacman -Qm > ~/.foreignPkgs && date >> ~/.foreignPkgs
 
 echo "Done."
 echo ""
