@@ -35,6 +35,7 @@ cp ~/.config/polybar/config .config/polybar/config
 cp ~/.background/$(readlink ~/.background/background) .background/
 
 # rEFInd
+cp /boot/efi/EFI/refind/*.MD
 cp /boot/efi/EFI/refind/custom* ./refind
 cp -r /boot/efi/EFI/refind/themes ./refind
 
