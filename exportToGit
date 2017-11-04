@@ -26,10 +26,10 @@ done
 cp -r ~/bin ./
 
 # configs
-cp ~/.config/bspwm/* ./.config/bspwm
-cp ~/.config/sxhkd/* ./.config/sxhkd
-cp ~/.config/polybar/* ./.config/polybar
-cp ~/.config/dunst/* ./.config/dunst
+cp ~/.config/bspwm/* ./.config/bspwm/
+cp ~/.config/sxhkd/* ./.config/sxhkd/
+cp ~/.config/dunst/* ./.config/dunst/
+cp ~/.config/polybar/config ./.config/polybar/config
 
 # backgrounds
 cp ~/.background/$(readlink ~/.background/background) ./.background/

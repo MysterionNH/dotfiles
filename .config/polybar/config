@@ -133,7 +133,7 @@ time = %H:%M
 time-alt= %H:%M:%S
 date = %d.%m.%Y
 date-alt = %A, %d %B %Y
-label = " %date% %time%"
+label = " %date% - %time%"
 
 [module/memory]
 type = internal/memory
@@ -149,9 +149,8 @@ interval = 3.0
 ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
-label-connected = %essid% ↓ %downspeed%
-label-disconnected = 
-label-disconnected-foreground = #ff1111
+label-connected = "%essid%  %upspeed%  %downspeed%"
+label-disconnected = 
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -164,8 +163,7 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-label-connected = LAN: %{T3}%local_ip%%{T-}
-label-disconnected-foreground = #ff0000
+label-connected = LAN: %local_ip%
 
 [module/volume]
 type = internal/volume
@@ -223,7 +221,7 @@ exec-if = pgrep -x spotify
 interval = 1
 
 format = <label>
-label = %output%
+label =  %output%
 
 [module/vpncheck]
 type = custom/script
@@ -231,7 +229,6 @@ exec = pgrep openvpn
 interval = 5
 label = vpn
 format-prefix = " "
-format-prefix-foreground = #5b
 
 [module/weather]
 type = custom/script
@@ -246,4 +243,4 @@ type = internal/fs
 
 mount-0 = /
 
-label-mounted = %mountpoint%: %percentage_used%%
+label-mounted =  %percentage_used%%
