@@ -33,8 +33,7 @@ URxvt.matcher.rend.0: Uline Bold fg6
 
 ! colors
 URxvt*colorUL: cyan
-*.underlineColor: [0]cyan
-*.cursorColor:  #ebdbb2
+*.cursorColor: #ebdbb2
 *.background: #282828
 *.foreground: #ebdbb2
 

@@ -1,36 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-cfg_tmpdir="/run/user/$UID/i3lock"
-overlay_image="/home/niklas/.lock/lock.png"
+# do not run more then once
+if pgrep -x i3lock > /dev/null; then
+  return 1;
+fi
 
-main() {
-	# do not run more then once
-	if pgrep -x i3lock > /dev/null;
-	then
-		return 1;
-	fi
-
-	umask 0077 # All files and dirs created should only be accessible by the user.
-
-	if ! [[ -d "$cfg_tmpdir" ]]; then
-		mkdir -p "$cfg_tmpdir" || {
-			return 1
-		}
-	fi
-
-	# screenshot
-	scrot "$cfg_tmpdir/lockbg.png"
-	image_file="${cfg_tmpdir}/lockbg.png"
-
-	# pixelize
-	convert "$image_file" -scale 192x108 -scale 1920x1080 "$cfg_tmpdir/lockbg.png"
-	
-	# overlay lock image
-	convert -gravity center -composite -matte "$image_file" "$overlay_image" "$cfg_tmpdir/lockbg.png"
-
-	until /usr/bin/i3lock -f -e -n -t -i "$image_file"; do
-		true
-	done
-}
-
-main "$@"
+i3lock --textcolor=deedd2ff --timecolor=deebb2ff --datecolor=deebb2ff --insidecolor=282828ff \
+--ringcolor=fff419ff --keyhlcolor=456387ff --bshlcolor=bc3838ff --insidevercolor=456387ff \
+--insidewrongcolor=bc3838ff --ringvercolor=83a2a6ff --ringwrongcolor=faab34ff \
+--line-uses-inside --linecolor=666554ff --blur 5 --clock --indicator \
+--datestr="%A, %b %d" --timestr="%H:%M" --wrongtext="Nope!" --indpos="960:490"
