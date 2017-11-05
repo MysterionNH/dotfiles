@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd ~/.background
+
+for file in `ls .`; do
+  if [ "loop" != "$file" && "setBackground" != "$file" ]; then
+    echo "$file" && feh --bg-fill "$file" && sleep 1;
+  fi
+done
+
+feh --bg-fill background

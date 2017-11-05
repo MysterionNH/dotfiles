@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm background
+ln -s "$1" background
+feh --bg-fill background

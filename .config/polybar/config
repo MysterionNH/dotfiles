@@ -1,7 +1,3 @@
-; [settings]
-; throttle-ms = 50
-; throttle-limit = 3
-
 [colors]
 background = #82000000
 foreground = #ccffffff
@@ -212,10 +208,10 @@ type = custom/script
 
 exec = /home/niklas/.config/polybar/spotify.sh
 exec-if = pgrep -x spotify
-interval = 10
+interval = 1
 
 format = <label>
-label =  %output%
+label =  %output% 
 
 [module/vpncheck]
 type = custom/script
