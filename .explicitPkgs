@@ -1,4 +1,5 @@
 accountsservice 0.6.45-1
+acpi 1.7-2
 adobe-source-code-pro-fonts 2.030ro+1.050it-4
 adobe-source-sans-pro-fonts 2.020ro+1.075it-2
 alsa-utils 1.1.4-1
@@ -53,7 +54,7 @@ discord-cli-git r45.57f869f-4
 dmenu2 0.2-1
 dosfstools 4.1-1
 ds4drv-git 0.5.1.194.f6be043-1
-dunst-git 1.2.0.137.987.g76857b6-1
+dunst-git 1.2.0.140.990.gfd81bd1-1
 e2fsprogs 1.43.7-1
 eclipse-cpp 4.7.1.a-1
 efibootmgr 15-1
@@ -89,9 +90,9 @@ help2man 1.47.5-1
 hplip 3.17.10-2
 htop 2.0.2-2
 https-everywhere-chrome-git 60817.158b4dfd6b-1
-i3lock 2.9.1-2
+i3lock-color-git r384.1d4cb5a-1
 i8kutils 1.43-3
-imagemagick 6.9.9.21-1
+imagemagick 6.9.9.22-1
 inetutils 1.9.4-5
 iproute2 4.13.0-1
 iputils 20161105.1f2bb12-2
@@ -210,7 +211,7 @@ texinfo 6.5-1
 texlive-core 2017.44918-1
 texlive-latexextra 2017.44907-1
 texstudio 2.12.6-2
-thunderbird-nightly 58.0a1.20171014-1
+thunderbird 52.4.0-1
 tlp 1.0-1
 tmux 2.6-1
 tree 1.7.0-2
@@ -299,4 +300,4 @@ xterm 330-1
 zathura 0.3.7-1
 zathura-cb 0.1.6-1
 zsh 5.4.2-1
-Sat Nov  4 07:40:59 CET 2017
+Sun Nov  5 21:55:09 CET 2017
