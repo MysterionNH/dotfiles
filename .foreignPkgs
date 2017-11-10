@@ -57,8 +57,6 @@ python-atomicwrites 1.1.5-2
 python-click-log 0.2.1-1
 python-click-threading 0.4.4-1
 python-icalendar 4.0.0-1
-python-notify2 0.3.1-1
-python-pilkit 2.0-1
 python-pytest-subtesthack 0.1.1-2
 python-pytest-xprocess 0.8-1
 python-sphinxcontrib-newsfeed 0.1.4-3
@@ -101,4 +99,4 @@ weechat-git 1.9.247.g902da71ff-1
 xboxdrv 0.8.8-4
 xf86-video-nouveau-blacklist-git v1.0.r0.g9f2561a-1
 xrdp 0.9.3-1
-Fri Nov 10 17:02:58 CET 2017
+Fri Nov 10 17:07:54 CET 2017
