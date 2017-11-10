@@ -32,29 +32,30 @@ bower 1.8.2-1
 bspwm-git 1:0.9.3.r28.ge621b98-1
 bumblebee-git 3.2.1.r50.d469a32-2
 bzip2 1.0.6-6
-chromium 62.0.3202.75-1
+chromium 62.0.3202.89-1
 chromium-widevine 1:1.4.8.1008-1
 clang 5.0.0-1
-cmake 3.9.4-1
+cmake 3.9.5-1
 cmatrix 1.2a-12
 cmus 2.7.1-8
 colord 1.4.1-1
 compton-git 0.1_beta2.87.g316eac0-1
 coreutils 8.28-1
 cower-git 17.4.g79c42eb-1
-cryptsetup 1.7.5-1
+cryptsetup 1.7.5-2
 cups 2.2.6-1
-device-mapper 2.02.175-1
+cups-pdf 3.0.1-1
+device-mapper 2.02.176-1
 dhcp 4.3.6-2
 dhcpcd 6.11.5-1
 dialog 1:1.3_20170509-1
 diffutils 3.6-1
-discord-canary 0.0.24-1
+discord-canary 0.0.27-1
 discord-cli-git r45.57f869f-4
 dmenu2 0.2-1
 dosfstools 4.1-1
 ds4drv-git 0.5.1.194.f6be043-1
-dunst-git 1.2.0.140.990.gfd81bd1-1
+dunst-git 1.2.0.142.992.g62e5028-1
 e2fsprogs 1.43.7-1
 eclipse-cpp 4.7.1.a-1
 efibootmgr 15-1
@@ -63,7 +64,7 @@ enchant 1.6.1-2
 ethtool-git 4.10.r9.gb888f35-1
 evince-git 3.25.91.r1.gebf88e08-1
 fakeroot 1.22-1
-feh 2.21-1
+feh 2.22.2-1
 file 5.32-1
 filesystem 2017.03-2
 findutils 4.6.0-2
@@ -78,7 +79,7 @@ gimp 2.8.22-1
 git 2.15.0-1
 git-extras 4.4.0-1
 gksu 2.0.2-6
-glibc 2.26-5
+glibc 2.26-6
 gnuhtml2latex 0.4-3
 gparted 0.30.0-3
 gperf 3.1-1
@@ -101,7 +102,7 @@ java-openjfx 8.u172-1
 jfsutils 1.1.15-4
 jmtpfs 0.5-1
 jq 1.5-5
-keybase-bin 1.0.35_20171031160055+fa845a3cc-1
+keybase-bin 1.0.35_20171109173309+a4a2652b2-1
 khal-git 0.9.7.dev43+g3f9e886-1
 khard 0.11.4-1
 latex2html 2017.2-2
@@ -122,7 +123,7 @@ logrotate 3.12.3-1
 lolcat 90.8.8-1
 lsof 4.89-1
 lutris 0.4.13-1
-lvm2 2.02.175-1
+lvm2 2.02.176-1
 m4 1.4.18-1
 make 4.2.1-2
 man-db 2.7.6.1-2
@@ -137,7 +138,7 @@ msmtp 1.6.6-1
 msr-tools 1.3-2
 mutt 1.9.1-1
 nano 2.8.7-1
-ncmpcpp 0.8-2
+ncmpcpp 0.8.1-1
 ncurses5-compat-libs 6.0+20170902-1
 neofetch 3.3.0-1
 neovim-git 0.2.0.r944.g77f1392f0-1
@@ -145,7 +146,7 @@ netctl 1.14-1
 nmap 7.60-1
 ntfs-3g 2017.3.23-1
 nvidia 387.22-4
-nvidia-settings 387.12-1
+nvidia-settings 387.22-1
 nvidia-xrun-git 0.3.9.ga56a6a8-1
 obs-studio-git 20.0.1.r11.g41a1b099-1
 offlineimap-git 7.1.2.8.g1ce596d-1
@@ -166,6 +167,7 @@ perl 5.26.1-1
 physlock 11-1
 pkg-config 0.29.2-1
 playerctl-git 0.5.0.r35.gf2af92e-1
+playonlinux 4.2.12-1
 polybar-git 3.0.5.r43.gb12aec1-1
 powertop 2.9-1
 primus 20151110-7
@@ -174,7 +176,14 @@ progress 0.13.1-1
 psmisc 23.1-1
 pulseaudio 11.1-1
 python-evdev 0.7.0-1
+python-notify2 0.3.1-1
+python-pilkit 2.0-1
 python-pip 9.0.1-2
+python-pycups 1.9.73-3
+python-pyqt4 4.12.1-1
+python-reportlab 3.4.0-1
+python2-pyqt4 4.12.1-1
+python2-reportlab 3.4.0-1
 qjoypad 4.3.0-2
 qt4 4.8.7-22
 qt5-x11extras 5.9.2-1
@@ -197,9 +206,11 @@ sed 4.4-1
 shadow 4.5-2
 siji-git r21.95369af-1
 simavr 1.5-1
+skype-secure 3.01-1
+skypeforlinux-bin 8.10.76.7-1
 sl 5.02-4
 smartmontools-svn 4433-1
-speedtest-cli 1.0.6-1
+speedtest-cli 1.0.7-1
 spotify 1.0.66.478-1
 steam 1.0.0.54-1
 sudo 1.8.21.p2-1
@@ -232,7 +243,7 @@ urxvt-vtwheel 0.3-2
 usbutils 008-1
 util-linux 2.31-1
 vi 1:070224-2
-vim 8.0.1176-1
+vim 8.0.1272-1
 visual-studio-code-git 1.1.0.insider.r17147.gf980319f5c-1
 vlc 2.2.6-4
 w3m 0.5.3.git20170102-2
@@ -240,12 +251,12 @@ weechat-discord-git r65.e30de7f-1
 weechat-git 1.9.247.g902da71ff-1
 wget 1.19.2-1
 which 2.21-2
-wine 2.19-1
+wine 2.20-1
 wireless_tools 30.pre9-1
 wpa_supplicant 1:2.6-11
 xautolock 2.2-4
 xbindkeys 1.8.6-2
-xboxdrv 0.8.8-3
+xboxdrv 0.8.8-4
 xclip 0.13-1
 xf86-input-evdev 2.10.5-1
 xf86-input-keyboard 1.9.0-2
@@ -300,4 +311,4 @@ xterm 330-1
 zathura 0.3.7-1
 zathura-cb 0.1.6-1
 zsh 5.4.2-1
-Sun Nov  5 21:55:09 CET 2017
+Fri Nov 10 17:02:58 CET 2017

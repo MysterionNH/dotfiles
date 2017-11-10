@@ -193,7 +193,7 @@ menu-0-3-exec = systemctl poweroff
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 8
 warn-temperature = 60
 
 format = <label>
@@ -215,7 +215,7 @@ label =  %output% 
 
 [module/vpncheck]
 type = custom/script
-exec = pgrep openvpn
+exec = pgrep -x openvpn
 interval = 5
 label = vpn
 format-prefix = " "

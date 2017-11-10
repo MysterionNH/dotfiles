@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# kill existing network connections
-sudo netctl stop-all
-sudo pkill wpa_supplicant
-
-# start wpa and dhcpcd
-sudo wpa_supplicant -i wlp3s0 -D wext -c /etc/wpa_supplicant/wpa_supplicant.conf -B
-sudo dhcpcd
