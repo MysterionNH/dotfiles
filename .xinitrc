@@ -28,7 +28,7 @@ xbindkeys &
 unclutter &
 
 # enable compositor
-compton -b &
+compton -b --dbus &
 
 # enable sync between urxvt and x clipboard
 autocutsel -fork &

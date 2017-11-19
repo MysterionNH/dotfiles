@@ -5,8 +5,26 @@ if pgrep -x i3lock > /dev/null; then
   return 1;
 fi
 
+# enable comptons fade
+sed -i '$ d' $HOME/.config/compton.conf && \
+  echo "no-fading-openclose = false;" >> $HOME/.config/compton.conf && \
+  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
+
+# kill dunst
+pkill -u $USER -USR1 dunst
+
 i3lock --textcolor=deedd2ff --timecolor=deebb2ff --datecolor=deebb2ff --insidecolor=282828ff \
---ringcolor=fff419ff --keyhlcolor=456387ff --bshlcolor=bc3838ff --insidevercolor=456387ff \
---insidewrongcolor=bc3838ff --ringvercolor=83a2a6ff --ringwrongcolor=faab34ff \
---line-uses-inside --linecolor=666554ff --blur 5 --clock --indicator \
---datestr="%A, %b %d" --timestr="%H:%M" --wrongtext="Nope!" --indpos="960:490"
+  --ringcolor=fff419ff --keyhlcolor=456387ff --bshlcolor=bc3838ff --insidevercolor=456387ff \
+  --insidewrongcolor=bc3838ff --ringvercolor=83a2a6ff --ringwrongcolor=faab34ff \
+  --line-uses-inside --linecolor=666554ff --blur 5 --clock --indicator \
+  --datestr="%A, %b %d" --timestr="%H:%M" --wrongtext="Nope!" --indpos="960:490"
+
+# revive dunst
+pkill -u $USER -USR2 dunst
+
+# disable comptons fade
+sleep 0.5
+sed -i '$ d' $HOME/.config/compton.conf && \
+  echo "no-fading-openclose = true;" >> $HOME/.config/compton.conf && \
+  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
+

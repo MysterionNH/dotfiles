@@ -194,7 +194,7 @@ menu-0-3-exec = systemctl poweroff
 [module/temperature]
 type = internal/temperature
 thermal-zone = 8
-warn-temperature = 60
+warn-temperature = 59
 
 format = <label>
 format-warn = <label-warn>
