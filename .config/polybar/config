@@ -234,3 +234,8 @@ type = internal/fs
 mount-0 = /
 
 label-mounted =  %percentage_used%%
+
+[module/xtitle]
+type = custom/script
+interval = 1
+exec = xtitle

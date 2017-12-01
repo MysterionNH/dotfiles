@@ -6,9 +6,9 @@ if pgrep -x i3lock > /dev/null; then
 fi
 
 # enable comptons fade
-sed -i '$ d' $HOME/.config/compton.conf && \
-  echo "no-fading-openclose = false;" >> $HOME/.config/compton.conf && \
-  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
+#sed -i '$ d' $HOME/.config/compton.conf && \
+#  echo "no-fading-openclose = false;" >> $HOME/.config/compton.conf && \
+#  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
 
 # kill dunst
 pkill -u $USER -USR1 dunst
@@ -23,8 +23,8 @@ i3lock --textcolor=deedd2ff --timecolor=deebb2ff --datecolor=deebb2ff --insideco
 pkill -u $USER -USR2 dunst
 
 # disable comptons fade
-sleep 0.5
-sed -i '$ d' $HOME/.config/compton.conf && \
-  echo "no-fading-openclose = true;" >> $HOME/.config/compton.conf && \
-  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
+#sleep 0.5
+#sed -i '$ d' $HOME/.config/compton.conf && \
+#  echo "no-fading-openclose = true;" >> $HOME/.config/compton.conf && \
+#  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
 
