@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+IFS=$'\t' read album artist title <<< "$(mpc --format="%album%\t%artist%\t%title%")"
+notify-send --expire-time=5000 --app-name=ncmpcpp --icon=no "$title" "$artist\n($album)"

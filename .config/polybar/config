@@ -56,7 +56,7 @@ tray-background = ${bar/bottom.background}
 tray-position = right
 tray-padding = 2
 
-modules-left = spotify
+modules-left = spotify mpd
 modules-right = weather temperature cpu memory filesystem
 
 [module/backlight]
@@ -122,6 +122,15 @@ interval = 2
 format = <label>
 format-prefix = "  "
 label = %percentage%%
+
+ramp-coreload-0 = ▁		
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆		
+ramp-coreload-6 = ▇		
+ramp-coreload-7 = █		
 
 [module/date]
 type = internal/date
@@ -215,14 +224,14 @@ label =  %output% 
 
 [module/vpncheck]
 type = custom/script
-exec = pgrep -x openvpn
-interval = 5
-label = vpn
-format-prefix = " "
+exec = ip link | grep tun0
+interval = 1
+label-foreground = #39d800
+label = " VPN"
 
 [module/weather]
 type = custom/script
-interval = 60
+interval = 300
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
@@ -230,12 +239,18 @@ exec = ~/.config/polybar/weather.py
 
 [module/filesystem]
 type = internal/fs
-
 mount-0 = /
-
 label-mounted =  %percentage_used%%
 
 [module/xtitle]
 type = custom/script
 interval = 1
 exec = xtitle
+
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+
+label-song = " %title% - %artist% "

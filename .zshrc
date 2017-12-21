@@ -95,6 +95,14 @@ qrcode() {
     echo $@ | curl -F-=\<- qrenco.de
 }
 
+# ncmpcpp
+alias ncmpcpp='if [ `pgrep mpd` ]; then urxvt -e "ncmpcpp" </dev/null &>/dev/null; else mpd; urxvt -e "ncmpcpp" </dev/null &>/dev/null; fi'
+
+# netctl + openvpn
+function netctl() {
+  sudo netctl "$@" && sudo openvpn --cd /home/niklas/media/vpn/mullvad/mullvad_config_linux_se --config /home/niklas/media/vpn/mullvad/mullvad_config_linux_se/mullvad_se.conf
+}
+
 # prompt
 autoload -Uz promptinit
 promptinit
