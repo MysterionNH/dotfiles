@@ -5,6 +5,9 @@ if pgrep -x i3lock > /dev/null; then
   return 1;
 fi
 
+# stop music
+playerctl pause; mpc pause
+
 # enable comptons fade
 #sed -i '$ d' $HOME/.config/compton.conf && \
 #  echo "no-fading-openclose = false;" >> $HOME/.config/compton.conf && \
@@ -28,3 +31,6 @@ pkill -u $USER -USR2 dunst
 #  echo "no-fading-openclose = true;" >> $HOME/.config/compton.conf && \
 #  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
 
+# resume music
+# TODO: this resumes music regardless whether it was playing before locking the screen
+playerctl play; mpc toggle

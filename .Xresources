@@ -1,5 +1,8 @@
 URxvt.intensityStyles: false
 URxvt.scrollBar: false
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*scrollTtyKeypress: true
 
 ! Ctrl Up and Down control font size
 URxvt.resize-font.smaller: C-Down
@@ -16,7 +19,7 @@ URxvt.iso14755_52: false
 URxvt*font: xft:Source Code Pro Medium:size=11:antialias=true:hinting=true,xft:Liberation Mono:size=9:antialias=true:hinting=true,xft:Font Awesome
 
 ! terminal padding
-URvxt.internalBorder: 15
+URvxt.internalBorder: 11
 
 Xft.autohint:   0
 Xft.lcdfilter:  lcddefault

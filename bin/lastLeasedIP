@@ -1,0 +1,1 @@
+sudo tac /var/lib/dhcp/dhcpd.leases | grep -oEm1 "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"

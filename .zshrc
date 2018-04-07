@@ -78,6 +78,10 @@ alias mv='mv -iv'
 alias nano='nano -xc'
 alias cal='khal interactive'
 
+# copy/paste X
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
+
 # git
 alias gc='git commit -am'
 alias gl='git log --graph --oneline --decorate --all'
@@ -94,9 +98,6 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 qrcode() {
     echo $@ | curl -F-=\<- qrenco.de
 }
-
-# ncmpcpp
-alias ncmpcpp='if [ `pgrep mpd` ]; then urxvt -e "ncmpcpp" </dev/null &>/dev/null; else mpd; urxvt -e "ncmpcpp" </dev/null &>/dev/null; fi'
 
 # netctl + openvpn
 function netctl() {

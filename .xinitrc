@@ -48,5 +48,8 @@ xautolock -time 15 -locker /home/niklas/bin/lock -nowlocker /home/niklas/bin/loc
 # start redshift
 pgrep redshift &> /dev/null || redshift -l 52.48:13.48 -m randr -t 6500:3500 &> /dev/null &
 
+# start udiskie
+udiskie &
+
 # start the de itself
 exec bspwm

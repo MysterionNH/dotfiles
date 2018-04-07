@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# low battery warning
+#
+
+BATTERY=/sys/class/power_supply/BAT0
+
+BATTERY_CHARGE_NOW=`grep "POWER_SUPPLY_CHARGE_NOW" $BATTERY/uevent | awk -F= '{ print $2 }'`
+BATTERY_CHARGE_FULL=`grep "POWER_SUPPLY_CHARGE_FULL_DESIGN" $BATTERY/uevent | awk -F= '{ print $2 }'`
+BATTERY_CHARGE_PERCENT=`bc <<< "scale=2; $BATTERY_CHARGE_NOW * 100 / $BATTERY_CHARGE_FULL"`
+
+#BATTERY_CHARGE_PERCENT=6
+
+if ((`bc <<< "$BATTERY_CHARGE_PERCENT <= 5"`)); then
+  systemctl suspend
+elif ((`bc <<< "$BATTERY_CHARGE_PERCENT <= 35"`)); then
+  notify-send -u critical -t 150000 "Battery extremly low! ($BATTERY_CHARGE_PERCENT%)" "Connect to charger NOW. Suspending at 5%"
+elif ((`bc <<< "$BATTERY_CHARGE_PERCENT <= 10"`)); then
+  notify-send -u normal -t 10000 "Battery low! ($BATTERY_CHARGE_PERCENT%)" "Connect to charger ASAP"
+fi

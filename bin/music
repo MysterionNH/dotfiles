@@ -1,0 +1,2 @@
+(pgrep mpd && urxvt -e "ncmpcpp" </dev/null &>/dev/null) || mpd && urxvt -e "ncmpcpp" </dev/null &>/dev/null;
+pgrep mpdscribble || mpdscrible

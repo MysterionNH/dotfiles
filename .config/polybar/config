@@ -20,12 +20,10 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = SourceCodePro:size=12;1
-font-3 = MaterialDesignIcons:size=14;0
 font-1 = FontAwesome:size=12;1
-font-4 = Termsyn:size=8;-1
-font-2 = Siji:pixelsize=10;0
+font-3 = MaterialDesignIcons:size=14;0
 
-modules-left = powermenu wireless-network wired-network vpncheck
+modules-left = powermenu wireless-network wired-network vpncheck #xtitle
 modules-center = bspwm
 modules-right = volume backlight battery date
 
@@ -48,9 +46,7 @@ module-margin-right = 1
 
 font-0 = SourceCodePro:size=12;1
 font-1 = FontAwesome:size=12;1
-font-2 = Siji:pixelsize=12;1
-font-3 = MaterialDesignIcons:size=12;1
-font-4 = Termsyn:size=12;1
+font-3 = MaterialDesignIcons:size=14;0
 
 tray-background = ${bar/bottom.background}
 tray-position = right
@@ -120,7 +116,7 @@ label-empty-padding = 1
 type = internal/cpu
 interval = 2
 format = <label>
-format-prefix = "  "
+format-prefix = " "
 label = %percentage%%
 
 ramp-coreload-0 = ▁		
@@ -144,7 +140,7 @@ label = " %date% - %time%"
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "  "
+format-prefix = " "
 format = <label>
 label = %percentage_used%%
 
