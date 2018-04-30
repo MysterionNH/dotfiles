@@ -220,7 +220,7 @@ label =  %output% 
 
 [module/vpncheck]
 type = custom/script
-exec = ip link | grep tun0
+exec = ip link | grep -E "tun0|mullvad"
 interval = 1
 label-foreground = #39d800
 label = " VPN"

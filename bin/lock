@@ -6,7 +6,7 @@ if pgrep -x i3lock > /dev/null; then
 fi
 
 # stop music
-playerctl pause; mpc pause
+#playerctl pause; mpc pause
 
 # enable comptons fade
 #sed -i '$ d' $HOME/.config/compton.conf && \
@@ -14,16 +14,16 @@ playerctl pause; mpc pause
 #  dbus-send --dest=com.github.chjj.compton.${DISPLAY/:/_} / com.github.chjj.compton.reset
 
 # kill dunst
-pkill -u $USER -USR1 dunst
+#pkill -u $USER -USR1 dunst
 
-i3lock --textcolor=deedd2ff --timecolor=deebb2ff --datecolor=deebb2ff --insidecolor=282828ff \
+i3lock --verifcolor=deedd2ff --timecolor=deebb2ff --datecolor=deebb2ff --insidecolor=282828ff \
   --ringcolor=fff419ff --keyhlcolor=456387ff --bshlcolor=bc3838ff --insidevercolor=456387ff \
   --insidewrongcolor=bc3838ff --ringvercolor=83a2a6ff --ringwrongcolor=faab34ff \
   --line-uses-inside --linecolor=666554ff --blur 5 --clock --indicator \
   --datestr="%A, %b %d" --timestr="%H:%M" --wrongtext="Nope!" --indpos="960:490"
 
 # revive dunst
-pkill -u $USER -USR2 dunst
+#pkill -u $USER -USR2 dunst
 
 # disable comptons fade
 #sleep 0.5
@@ -33,4 +33,4 @@ pkill -u $USER -USR2 dunst
 
 # resume music
 # TODO: this resumes music regardless whether it was playing before locking the screen
-playerctl play; mpc toggle
+#playerctl play; mpc toggle
