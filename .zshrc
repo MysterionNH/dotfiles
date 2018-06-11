@@ -1,6 +1,8 @@
 # make
 export MAKEFLAGS="$MAKEFLAGS -j$(($(nproc)))"
 
+export GPG_TTY=$(tty)
+
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=100000
