@@ -41,9 +41,9 @@ cp ~/.config/polybar/config .config/polybar/config
 cp ~/.background/* .background/
 
 # rEFInd
-cp /boot/efi/EFI/refind/*.MD refind
-cp /boot/efi/EFI/refind/custom* refind
-cp -r /boot/efi/EFI/refind/themes refind
+cp /esp/EFI/refind/*.MD refind
+cp /esp/EFI/refind/custom* refind
+cp -r /esp/EFI/refind/themes refind
 
 # systemd services
 cp /etc/systemd/system/clock_mod-fix.service ./services

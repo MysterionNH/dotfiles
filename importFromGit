@@ -19,7 +19,7 @@ cp -i .config/dunst/* ~/.config/dunst
 cp -i .background/background.png ~/.background/
 
 # rEFInd (will fail, because efi disk is mounted ro)
-cp -ri ./refind/* /boot/efi/EFI/refind/
+cp -ri ./refind/* /esp/EFI/refind/
 
 # systemd services
 cp -i ./services/* /etc/systemd/system
