@@ -1,0 +1,2 @@
+sudo openconnect 77.245.32.18/ASIS-VPN --servercert sha256:2daa29dbc9eb38002f04f4a78cf4c721783567fafc502430d5e5e71f8e40ce7f &
+sleep 5 && xfreerdp +fonts +clipboard +f /u:"FLORIANALBRECHT\Niklas Halle" /v:192.168.162.120:3389

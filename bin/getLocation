@@ -1,0 +1,2 @@
+for line in `curl "https://www.geoip.co.uk/ipwhois.php?ip=185.65.135.160" | grep -oP "(?<=country:)\s+[A-Z]{2}(?=<br\ />)|\d{2}.\d{4}\s\d{2}.\d{4}"`; do echo $line | sed -e 's/^[[:space:]]*//'; done
+curl http://www.geoip.co.uk/ | grep -oP '\d+\.\d+\.\d+\.\d+|\d+\.\d+,\d+\.\d+'
