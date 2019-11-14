@@ -30,7 +30,7 @@ Xft.rgba:       rgba
 
 ! clickable links, clipboard support, mouse wheel support, and on the fly font resizing
 URxvt.perl-ext-common: default,matcher,clipboard,vtwheel,resize-font
-URxvt.url-launcher: /usr/bin/chromium
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg6
 

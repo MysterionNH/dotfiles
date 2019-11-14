@@ -1,0 +1,2 @@
+#!/bin/zsh
+xinput set-prop "DLL0798:00 06CB:7E92 Touchpad" "libinput Tapping Enabled" 1

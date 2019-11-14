@@ -1,0 +1,9 @@
+#!/bin/python
+import sys
+import os
+import subprocess as sp
+
+sp.call('clear', shell=True)
+rows, columns = sp.check_output(['stty', 'size']).split()
+
+print((" " + " ".join(sys.argv[1:]) + " ").center(int(columns), "*"))

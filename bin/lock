@@ -20,7 +20,7 @@ i3lock --verifcolor=deedd2ff --timecolor=deebb2ff --datecolor=deebb2ff --insidec
   --ringcolor=fff419ff --keyhlcolor=456387ff --bshlcolor=bc3838ff --insidevercolor=456387ff \
   --insidewrongcolor=bc3838ff --ringvercolor=83a2a6ff --ringwrongcolor=faab34ff \
   --line-uses-inside --linecolor=666554ff --blur 5 --clock --indicator \
-  --datestr="%A, %b %d" --timestr="%H:%M" --wrongtext="Nope!" --indpos="960:490"
+  --datestr="%A, %b %d" --timestr="%H:%M:%S" --wrongtext="Nope!" --indpos="960:490"
 
 # revive dunst
 #pkill -u $USER -USR2 dunst

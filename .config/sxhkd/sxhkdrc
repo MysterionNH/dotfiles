@@ -11,7 +11,7 @@ super + shift + Return
 
 # file explorer
 super + e
-	urxvt -depth 32 -bg rgba:2800/2800/2800/b500 -e "ranger"
+	thunar
 
 # program launcher
 super + @space

@@ -48,7 +48,7 @@ font-0 = SourceCodePro:size=12;1
 font-1 = FontAwesome:size=12;1
 font-3 = MaterialDesignIcons:size=14;0
 
-tray-background = ${bar/bottom.background}
+tray-background = ${colors.background}
 tray-position = right
 tray-padding = 2
 
@@ -69,7 +69,7 @@ ramp-4 = 🌑
 
 [module/battery]
 type = internal/battery
-full-at = 92
+full-at = 95
 battery = BAT0
 adapter = ADP1
 
@@ -159,7 +159,7 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-label-connected = LAN: %local_ip%
+label-connected = LAN: %local_ip%  %upspeed%  %downspeed%
 
 [module/volume]
 type = internal/volume
@@ -220,7 +220,7 @@ label =  %output% 
 
 [module/vpncheck]
 type = custom/script
-exec = ip link | grep -E "tun0|mullvad"
+exec = ip link | grep -iE "tun0|mullvad|wireguard"
 interval = 1
 label-foreground = #39d800
 label = " VPN"

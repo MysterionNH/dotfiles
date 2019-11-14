@@ -1,8 +1,6 @@
 # make
 export MAKEFLAGS="$MAKEFLAGS -j$(($(nproc)))"
 
-export GPG_TTY=$(tty)
-
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=100000
@@ -64,6 +62,39 @@ function gap() {
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` $1))
 }
 
+# blockify cli control
+function bb() {
+    local signal
+    case "$1" in
+        '')  blockify-dbus get 2>/dev/null && return 0;;
+        ex|exit)
+            signal='TERM';;       # Exit
+        b|block)
+            signal='USR1';;       # Block
+        u|unblock)
+            signal='USR2';;       # Unblock
+        p|previous)
+            signal='RTMIN';;      # Previous song
+        n|next)
+            signal='RTMIN+1';;    # Next song
+        t|toggle)
+            signal='RTMIN+2';;    # Toggle play song
+        tb|toggleblock)
+            signal='RTMIN+3';;    # Toggle block song
+        ip|iprevious)
+            signal='RTMIN+10';;   # Previous interlude song
+        in|inext)
+            signal='RTMIN+11';;   # Next interlude song
+        it|itoggle)
+            signal='RTMIN+12';;   # Toggle play interlude song
+        itr|itoggleresume)
+            signal='RTMIN+13';;   # Toggle interlude resume
+        *) echo "Usage: bb ( b[lock] | u[nblock] | p[revious] | n[ext] | t[oggle] | t[oggle]b[lock] |...)" && return 0;;
+    esac
+    pkill --signal "$signal" -f 'python.*blockify'
+}
+
+
 # ls
 export COLUMNS  # Remember columns for subprocesses.
 eval "$(dircolors)"
@@ -109,4 +140,8 @@ function netctl() {
 # prompt
 autoload -Uz promptinit
 promptinit
-prompt walters
+prompt walters2
+source /home/niklas/.git_prompt/zshrc.sh
+
+# nvm
+#source /usr/share/nvm/init-nvm.sh
