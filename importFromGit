@@ -7,7 +7,7 @@ git reset --hard origin/master
 # copy files to location (interactive)
 
 # scripts
-cp -i ./bin/* ~/bin/
+cp -i ./.bin/* ~/.bin/
 
 # configs
 cp -i .config/bspwm/* ~/.config/bspwm

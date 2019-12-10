@@ -1,0 +1,2 @@
+echo "scale=5;$@" | sed "s/,/\./g" | bc
+echo

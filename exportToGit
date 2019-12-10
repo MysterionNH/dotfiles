@@ -19,12 +19,12 @@ do
   then
     mkdir -p "$dir"
   fi
-done    
+done
 
 # copy all relevant files to current folder
 
 # scripts
-cp -r ~/bin ./
+cp -r ~/.bin ./
 
 # package lists
 cp ~/.dependenciesPkgs .

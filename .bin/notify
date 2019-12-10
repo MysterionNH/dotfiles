@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+local test=""
+
+curl -s https://www.psychologie.hu-berlin.de/de/praxis/ambulanz/psysozin/kontakt | \
+    grep "Diagnostik und Therapie geschlossen" > /dev/null && test=dfgh
+
+if [ -z "${test}" ]; then
+    notify-send "Update, NOW!"
+fi

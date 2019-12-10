@@ -132,11 +132,6 @@ qrcode() {
     echo $@ | curl -F-=\<- qrenco.de
 }
 
-# netctl + openvpn
-function netctl() {
-  sudo netctl "$@" && sudo openvpn --cd /home/niklas/media/vpn/mullvad/mullvad_config_linux_se --config /home/niklas/media/vpn/mullvad/mullvad_config_linux_se/mullvad_se.conf
-}
-
 # prompt
 autoload -Uz promptinit
 promptinit
